@@ -1,0 +1,73 @@
+.box{
+    width: 142px;
+    height: 200px;
+    border: 2px invisible #ff9fff70;
+}
+.box.purple{
+    background-color: #ff9fff24;
+    border-color: #ff9fff70;
+}
+section.istorija{
+    top: -190px;
+    border: 2px solid#ff9fff70;
+    height: 500px;
+    min-height: 200px;
+    position: relative;
+}
+
+.istorija{
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 200px;
+}
+.istorija.box{
+    display: inline-block;
+    position: relative;
+}
+.Istorija.box img{
+    margin-top: 12px;
+    width: 150px
+}
+.Istorija.box h2{
+    top: -235px;;
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    left: 160px;
+}
+.Istorija.box p{
+    font-size: 18px;
+    color: rgb(254, 218, 218);
+    position:relative;
+    top: -254px;
+    bottom: 0px;
+    left: 160px;
+    margin-right: -1650px;
+}
+.Istorija.box h3{
+    color: rgb(254, 218, 218);
+    top: -250px;
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    left: 160px;
+    margin-right: -150px;
+}
+.Istorija.box h4{
+    color: rgb(254, 218, 218);
+    top: -260px;
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    margin-left: 0px;
+    margin-right: -150px;
+}
+.Istorija.p{
+    font-size: 18px;;
+    color: rgb(254, 218, 218);
+    position:relative;
+    margin-left: -155px;
+    margin-top: -20px;
+}
