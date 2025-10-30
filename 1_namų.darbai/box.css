@@ -1,0 +1,18 @@
+body{
+    .box{
+    box-sizing: border-box;
+    border: 1xp solid lightblue;
+    width: 33.333%;
+    height: 10xp;
+    font-size: 20xp;
+    display: inline-block;
+    min-width: 500xp;
+    vertical-align: top;
+}
+img{;
+    width:30%;
+}
+.Istorija_p{
+    display: inline-block;
+    vertical-align: top;
+]
