@@ -44,7 +44,7 @@ section.istorija{
 }
 
 .Istorija.box h2{
-    top: -410px;;
+    top: -405px;;
     font-size: 20px;
     position:relative;
     bottom: 225px;
@@ -90,5 +90,52 @@ ul{
     position:relative;
     margin-left: -20px;
     margin-top: -435px;
-    margin-right: -350px;
+    margin-right: -800px;
+}
+h5{
+    color: rgb(254, 218, 218);
+    top: -180px;
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    left: 0px;
+    margin-right: -170px;
+}
+.Istorija.p1{
+    font-size: 18px;;
+    color: rgb(254, 218, 218);
+    position:relative;;
+    margin-left:-160px;
+    margin-top: 260px;
+}
+h6{
+    color: rgb(254, 218, 218);
+    top: -70px;
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    left: 0px;
+    margin-right: -170px;
+}
+.Istorija.p2{
+    font-size: 18px;;
+    color: rgb(254, 218, 218);
+    position:relative;;
+    margin-left:-160px;
+    margin-top: 370px;
+}
+.Istorija.h6{
+    color: rgb(254, 218, 218);
+    font-size: 20px;
+    position:relative;
+    bottom: 225px;
+    left: 0px;
+    margin-right: -170px;
+    margin-top:-150px;
+}
+.Istorija.title{
+    color: rgb(254, 218, 218);
+    font-size: 20px;
+    position:relative;
+    margin-top:450px;
 }
