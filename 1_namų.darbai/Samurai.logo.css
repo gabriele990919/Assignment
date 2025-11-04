@@ -1,5 +1,5 @@
 .samurai img {
-    width: 250px;
+    width: 100px;
     margin-left: 0px;
     margin-top: 280px;
     position: relative;
@@ -7,4 +7,5 @@
 }
 .img:hover{
     left: 50px;
+    transition: all 0.5s;
 }

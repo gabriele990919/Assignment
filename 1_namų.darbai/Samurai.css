@@ -1,0 +1,16 @@
+.samurai{
+    width: 180px;
+    height: 180px;
+    background-color: rgb(221, 169, 213);
+    background-image: url("Samurai\ logo.png");
+    background-size: 180px;
+    position: relative;
+    left:0;
+    top:300px;
+    cursor: pointer;
+    transition: all 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.samurai:hover{
+    background-color: rgba(97, 20, 220, 0.093);
+    left:150px;
+}
