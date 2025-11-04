@@ -1,0 +1,10 @@
+h2 {
+    font-size: 40px;
+    font-style: italic;
+    color: #c388bd90;
+    margin-top: -150px;
+    margin-left: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s;
+}
