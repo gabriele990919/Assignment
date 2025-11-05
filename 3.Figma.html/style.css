@@ -1,1 +1,41 @@
-body{background-color:#fff}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(128, 198, 202);
+    box-sizing: border-box;
+}
+
+.topHeader {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+}
+
+.linksContainer {
+    margin-top: 70px;
+    margin-right: 192px;
+    display: flex;
+    font-size: 18px;
+    color: #00000050;
+    font-family: monospace;
+    column-gap: 40px;
+}
+
+.Logo {
+    margin-top: 56px;
+    margin-left: 191px;
+}
+
+.T {
+    margin-top: 61px;
+    margin-left: 204px;
+}
