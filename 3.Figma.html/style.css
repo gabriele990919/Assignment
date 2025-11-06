@@ -20,7 +20,7 @@ body {
 }
 
 .linksContainer {
-    position: relative;
+    position: absolute;
     display: flex;
     padding: 23px;
     top: 70px;
