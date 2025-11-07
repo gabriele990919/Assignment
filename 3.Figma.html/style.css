@@ -128,7 +128,7 @@ body {
 
 .vector {
     position: absolute;
-    top: 1220px;
+    top: 1200px;
     left: 0;
 }
 
@@ -139,7 +139,7 @@ body {
 
 }
 
-.box {
+.box1 {
     position: absolute;
     display: inline-block;
     box-sizing: border-box;
@@ -149,8 +149,40 @@ body {
     width: 350px;
     height: 354px;
     top: 1224px;
-    right: 240px;
-    box-shadow: 23px 23px 20cqi -10px rgba(69, 143, 246, 0.01);
-    -webkit-box-shadow: 23px 23px 10px -10px rgba(69, 143, 246, 0.01);
-    -moz-box-shadow: 23px 23px 5px -10px rgba(69, 143, 246, 0.01);
+    right: 250px;
+    box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
+    -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+}
+
+.box2 {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 350px;
+    height: 354px;
+    top: 1224px;
+    right: 800px;
+    box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
+    -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+}
+
+.box3 {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 350px;
+    height: 354px;
+    top: 1224px;
+    left: 250px;
+    box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
+    -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
 }
