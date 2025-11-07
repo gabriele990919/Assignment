@@ -1,6 +1,7 @@
 body {
     margin: 0;
     height: 500vh;
+    width: 170vh;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -132,5 +133,8 @@ body {
 }
 
 .element {
-    
+    position: absolute;
+    top: 1511px ;
+    right: 191px ;
+
 }
