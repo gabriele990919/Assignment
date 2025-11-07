@@ -154,6 +154,7 @@ body {
     -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     cursor: pointer;
+    color: white;
 }
 
 .box1:hover {
@@ -169,9 +170,10 @@ body {
 
 .con{
     position: absolute;
-    top: 1420px;
-    right: 438px;
-
+    top: 1470px;
+    right: 355px;
+    font-size: 16px;
+    color: #7D7987;
 }
 
 .box2 {
