@@ -138,3 +138,17 @@ body {
     right: 191px ;
 
 }
+
+.box {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 350px;
+    height: 354px;
+    top: 1224px;
+    right: 240px;
+
+}
