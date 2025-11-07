@@ -1,5 +1,8 @@
 body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 500vh;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -43,7 +46,7 @@ body {
 }
 
 .firstsection h1{
-    position: fixed;
+    position: absolute;
     display: flex;
     font-size: 48px;
     top: 283px;
@@ -52,7 +55,7 @@ body {
 }
 
 .firstsection h2 {
-    position: fixed;
+    position: absolute;
     display: flex;
     font-size: 21px;
     top: 420px;
@@ -62,7 +65,7 @@ body {
 }
 
 .firstsection button {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     line-height: 35px;
@@ -83,4 +86,43 @@ body {
 .firstsection button:hover{
     background: transparent;
     color: #458FF6;
+}
+
+.illiustration {
+    position: absolute;
+    top: 177px;
+    right: 163px;
+}
+
+.secondsection h2 {
+    position: absolute;
+    display: flex;
+    top: 967px;
+    left: 850px;
+    font-size: 36px;
+    padding-bottom: 10px;
+}
+
+.secondsection button{
+    position: absolute;
+    display: flex;
+    top: 1069px;
+    left: 905px;
+    width: 56px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.secondsection p{
+    position: absolute;
+    width: 952px;
+    height: 60px;
+    letter-spacing: 1,2;
+    text-align: center;
+    font-size: 18px;
+    color: #7D7987;
+    font-weight: 100;
+    top: 1150px;
+    left: 475px;
 }
