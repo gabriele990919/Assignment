@@ -153,6 +153,12 @@ body {
     box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
     -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box1:hover {
+    background-color:#458FF6;
+    color: white;
 }
 
 .box2 {
@@ -169,6 +175,12 @@ body {
     box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
     -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box2:hover {
+    background-color:#458FF6;
+    color: white;
 }
 
 .box3 {
@@ -185,6 +197,12 @@ body {
     box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
     -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box3:hover {
+    background-color:#458FF6;
+    color: white;
 }
 
 .box4 {
@@ -196,9 +214,59 @@ body {
     border: 1px solid white;
     width: 350px;
     height: 354px;
-    top: 1400px;
+    top: 1660px;
     right: 250px;
     box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
     -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
     -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box4:hover {
+    background-color:#458FF6;
+    color: white;
+}
+
+.box5 {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 350px;
+    height: 354px;
+    top: 1660px;
+    right: 800px;
+    box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
+    -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box5:hover {
+    background-color:#458FF6;
+    color: white;
+}
+
+.box6 {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 350px;
+    height: 354px;
+    top: 1660px;
+    left: 250px;
+    box-shadow: 23px 23px 50cqi -10px rgba(69, 143, 246, 0.200);
+    -webkit-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    -moz-box-shadow: 23px 23px 50px -10px rgba(69, 143, 246, 0.200);
+    cursor: pointer;
+}
+
+.box6:hover {
+    background-color:#458FF6;
+    color: white;
 }
