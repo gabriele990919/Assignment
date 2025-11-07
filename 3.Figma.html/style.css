@@ -1,10 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
-    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .topHeader {
@@ -12,75 +8,79 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0;
+    padding: 0;
 }
 
-.menu {
-    display: flex;
-}
-
-.linksContainer {
-    position: absolute;
-    display: flex;
-    padding: 23px;
-    top: 70px;
-    right: 192px;
-    font-size: 18px;
-    column-gap: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    color: #00000050;
-    list-style: none;
-    text-decoration: none;
+.dot {
+    margin-top: 50px;
 }
 
 .Logo {
-    margin-top: 50px;
+    margin-top: 56px;
     margin-left: 191px;
-    display: inline-block;
 }
 
-.illiustration {
-    position: fixed;
-    top: 177px;
-    right: 163px;
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: top;
 }
 
-.Dot {
-    position: absolute;
-    left: 50px;
-    top: 160px;
-}
-
-h1 {
-    position: fixed;
-    top: 283px;
-    left: 190px;
-    font-size: 48px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: bold;
-}
-
-.healthcare {
-    position: absolute;
-    top: 420px;
-    left: 190px;
-    font-size: 21px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 300;
-    color: #7D7987;
-}
-
-.consult {
-    position: absolute;
-    top:561px;
-    left: 190px;
-}
-
-.service {
-    display:flex;
-}
-   /* padding: 23px;
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    padding: 23px;
     margin-top: 70px;
     margin-right: 192px;
+    text-align: center;
+    column-gap: 40px;
+    color: #00000050;
     font-size: 18px;
-    row-gap: 40px;
+}
+
+.firstsection h1{
+    position: fixed;
+    display: flex;
+    font-size: 48px;
+    top: 283px;
+    left: 190px;
+    font-weight: 700;
+}
+
+.firstsection h2 {
+    position: fixed;
+    display: flex;
+    font-size: 21px;
+    top: 420px;
+    left: 190px;
+    color: #7D7987;
+    font-weight: 100;
+}
+
+.firstsection button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    top: 561px;
+    left: 190px;
+    width: 200px;
+    height: 55px;
+    padding: 10px 12px;
+    background-color: #458FF6;
+    border: 1px solid #458FF6;
+    border-radius: 55px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.firstsection button:hover{
+    background: transparent;
+    color: #458FF6;
+}
