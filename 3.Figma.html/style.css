@@ -1,7 +1,5 @@
 body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     height: 500vh;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -125,4 +123,14 @@ body {
     font-weight: 100;
     top: 1120px;
     left: 475px;
+}
+
+.vector {
+    position: absolute;
+    top: 1220px;
+    left: 0;
+}
+
+.element {
+    
 }
