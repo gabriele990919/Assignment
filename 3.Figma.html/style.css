@@ -113,7 +113,7 @@ body {
     border-radius: 5px;
 }
 
-.secondsection p {
+.p {
     position: absolute;
     width: 952px;
     height: 60px;
@@ -159,6 +159,19 @@ body {
 .box1:hover {
     background-color:#458FF6;
     color: white;
+}
+
+.consultation {
+    position: absolute;
+    top: 1420px;
+    right: 438px;
+}
+
+.con{
+    position: absolute;
+    top: 1420px;
+    right: 438px;
+
 }
 
 .box2 {
@@ -269,4 +282,17 @@ body {
 .box6:hover {
     background-color:#458FF6;
     color: white;
+}
+
+.frame.box {
+    position: absolute;
+    width: 68px;
+    height: 95px;
+    top:1320px;
+    right: 500px;
+}
+
+h3 {
+    font-size: 24px;
+    color: black;
 }
