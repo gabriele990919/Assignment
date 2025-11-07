@@ -150,7 +150,7 @@ body {
     height: 354px;
     top: 1224px;
     right: 240px;
-    box-shadow: 55px 107px 177px 23px rgba(69, 143, 246, 0.04);
-    -webkit-box-shadow: 55px 107px 177px 23px rgba(69, 143, 246, 0.04);
-    -moz-box-shadow: 55px 107px 177px 23px rgba(69, 143, 246, 0.04);
+    box-shadow: 23px 23px 20cqi -10px rgba(69, 143, 246, 0.01);
+    -webkit-box-shadow: 23px 23px 10px -10px rgba(69, 143, 246, 0.01);
+    -moz-box-shadow: 23px 23px 5px -10px rgba(69, 143, 246, 0.01);
 }
