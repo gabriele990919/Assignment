@@ -198,6 +198,21 @@ body {
     color: white;
 }
 
+.pharmacy {
+    position: absolute;
+    top: 1420px;
+    right: 940px;
+}
+
+.phar {
+    position: absolute;
+    top: 1470px;
+    right: 880px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #7D7987;
+}
+
 .box3 {
     position: absolute;
     display: inline-block;
