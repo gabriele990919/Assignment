@@ -165,6 +165,7 @@ body {
     position: absolute;
     top: 1420px;
     right: 438px;
+    font-size: 24px;
 }
 
 .con{
@@ -202,6 +203,7 @@ body {
     position: absolute;
     top: 1420px;
     right: 940px;
+    font-size: 24px;
 }
 
 .phar {
@@ -233,6 +235,22 @@ body {
 .box3:hover {
     background-color:#458FF6;
     color: white;
+}
+
+.Search {
+    position: absolute;
+    top: 1420px;
+    left: 280px;
+    font-size: 24px;
+}
+
+.sear {
+    position: absolute;
+    top: 1470px;
+    left: 280px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #7D7987;
 }
 
 .box4 {
@@ -320,4 +338,12 @@ h3 {
     height: 95px;
     top:1320px;
     right: 1050px;
+}
+
+.search {
+    position: absolute;
+    width: 100px;
+    height: 95px;
+    top:1320px;
+    left: 280px;
 }
