@@ -170,8 +170,9 @@ body {
 .con{
     position: absolute;
     top: 1470px;
-    right: 355px;
+    right: 320px;
     font-size: 16px;
+    letter-spacing: 1px;
     color: #7D7987;
 }
 
@@ -296,4 +297,12 @@ body {
 h3 {
     font-size: 24px;
     color: black;
+}
+
+.pharmacyimg {
+    position: absolute;
+    width: 68px;
+    height: 95px;
+    top:1320px;
+    right: 1050px;
 }
