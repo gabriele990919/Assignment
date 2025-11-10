@@ -320,6 +320,15 @@ body {
     font-size: 24px;
 }
 
+.emerg {
+    position: absolute;
+    top: 1850px;
+    right: 862px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #7D7987;
+}
+
 .box6 {
     position: absolute;
     display: inline-block;
