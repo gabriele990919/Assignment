@@ -284,8 +284,8 @@ body {
 
 .tra {
     position: absolute;
-    top: 1470px;
-    right: 320px;
+    top: 1850px;
+    right: 300px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -311,6 +311,13 @@ body {
 .box5:hover {
     background-color:#458FF6;
     color: white;
+}
+
+.emergency {
+    position: absolute;
+    top: 1800px;
+    right: 950px;
+    font-size: 24px;
 }
 
 .box6 {
@@ -365,4 +372,12 @@ body {
     height: 95px;
     top:1700px;
     right: 500px;
+}
+
+.care {
+    position: absolute;
+    width: 80px;
+    height: 95px;
+    top:1685px;
+    right: 1035px;
 }
