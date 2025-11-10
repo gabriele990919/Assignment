@@ -275,6 +275,22 @@ body {
     color: white;
 }
 
+.tracking {
+    position: absolute;
+    top: 1800px;
+    right: 478px;
+    font-size: 24px;
+}
+
+.tra {
+    position: absolute;
+    top: 1470px;
+    right: 320px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #7D7987;
+}
+
 .box5 {
     position: absolute;
     display: inline-block;
@@ -327,11 +343,6 @@ body {
     right: 500px;
 }
 
-h3 {
-    font-size: 24px;
-    color: black;
-}
-
 .pharmacyimg {
     position: absolute;
     width: 68px;
@@ -346,4 +357,12 @@ h3 {
     height: 95px;
     top:1320px;
     left: 280px;
+}
+
+.track {
+    position: absolute;
+    width: 68px;
+    height: 95px;
+    top:1700px;
+    right: 500px;
 }
