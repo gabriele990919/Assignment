@@ -157,7 +157,7 @@ body {
 }
 
 .box1:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -168,7 +168,7 @@ body {
     font-size: 24px;
 }
 
-.con{
+.con {
     position: absolute;
     top: 1470px;
     right: 320px;
@@ -195,7 +195,7 @@ body {
 }
 
 .box2:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -233,7 +233,7 @@ body {
 }
 
 .box3:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -271,7 +271,7 @@ body {
 }
 
 .box4:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -309,7 +309,7 @@ body {
 }
 
 .box5:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -347,10 +347,11 @@ body {
 }
 
 .box6:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
-.detailinfo{
+
+.detailinfo {
     position: absolute;
     top: 1800px;
     left: 280px;
@@ -372,7 +373,7 @@ body {
     position: absolute;
     width: 68px;
     height: 95px;
-    top:1320px;
+    top: 1320px;
     right: 500px;
 }
 
@@ -380,7 +381,7 @@ body {
     position: absolute;
     width: 68px;
     height: 95px;
-    top:1320px;
+    top: 1320px;
     right: 1050px;
 }
 
@@ -388,7 +389,7 @@ body {
     position: absolute;
     width: 100px;
     height: 95px;
-    top:1320px;
+    top: 1320px;
     left: 280px;
 }
 
@@ -396,7 +397,7 @@ body {
     position: absolute;
     width: 68px;
     height: 95px;
-    top:1700px;
+    top: 1700px;
     right: 500px;
 }
 
@@ -404,7 +405,7 @@ body {
     position: absolute;
     width: 80px;
     height: 95px;
-    top:1685px;
+    top: 1685px;
     right: 1035px;
 }
 
@@ -412,11 +413,13 @@ body {
     position: absolute;
     width: 100px;
     height: 95px;
-    top:1700px;
+    top: 1700px;
     left: 265px;
 }
 
-.secondsection button{
+/* end of the logo's */
+
+.secondsection button {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -436,7 +439,7 @@ body {
 }
 
 .secondsection button:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
 
@@ -474,7 +477,7 @@ body {
     display: flex;
     justify-content: center;
     line-height: 35px;
-    top: 2700px;
+    top: 2680px;
     right: 330px;
     width: 200px;
     height: 55px;
@@ -489,6 +492,67 @@ body {
 }
 
 .thirdsection button:hover {
-    background-color:#458FF6;
+    background-color: #458FF6;
     color: white;
 }
+
+.fourthsection h2 {
+    position: absolute;
+    display: flex;
+    top: 3100px;
+    left: 292px;
+    font-size: 36px;
+    padding-bottom: 10px;
+}
+
+.p2 {
+    position: absolute;
+    width: 952px;
+    height: 60px;
+    letter-spacing: 1, 2;
+    text-align: center;
+    font-size: 18px;
+    color: #7D7987;
+    font-weight: 100;
+    top: 3230px;
+    left: 290px;
+    text-align: left;
+}
+
+.illustartion2 {
+    position: absolute;
+    top: 3024px;
+    right: 154px;
+}
+
+.arrow {
+    position: absolute;
+    top: 3423px;
+    left: 480px
+
+}
+
+.fourthsection button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    top: 3400px;
+    left: 330px;
+    width: 200px;
+    height: 55px;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 3px solid #458FF6;
+    border-radius: 55px;
+    color: #458FF6;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.fourthsection button:hover {
+    background-color: #458FF6;
+    color: white;
+}
+
