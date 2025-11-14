@@ -561,12 +561,11 @@ body {
     right: 390px; 
 }
 
-.fifthsection h2 {
+.illustration4 {
     position: absolute;
-    display: flex;
+    justify-content: center;
     top: 4433px;
-    left: 650px;
-    font-size: 56px;
-    padding-bottom: 10px
+    left: 280px;
+    width: 1700px;
 
 }
