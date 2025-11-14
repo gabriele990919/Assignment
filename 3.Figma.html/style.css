@@ -164,14 +164,14 @@ body {
 .consultation {
     position: absolute;
     top: 1420px;
-    right: 438px;
+    right: 430px;
     font-size: 24px;
 }
 
 .con {
     position: absolute;
     top: 1470px;
-    right: 320px;
+    right: 290px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -202,14 +202,14 @@ body {
 .pharmacy {
     position: absolute;
     top: 1420px;
-    right: 935px;
+    right: 925px;
     font-size: 24px;
 }
 
 .phar {
     position: absolute;
     top: 1470px;
-    right: 862px;
+    right: 850px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -316,14 +316,14 @@ body {
 .emergency {
     position: absolute;
     top: 1800px;
-    right: 950px;
+    right: 940px;
     font-size: 24px;
 }
 
 .emerg {
     position: absolute;
     top: 1850px;
-    right: 862px;
+    right: 840px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -406,7 +406,7 @@ body {
     width: 80px;
     height: 95px;
     top: 1685px;
-    right: 1035px;
+    right: 1040px;
 }
 
 .info {
