@@ -568,3 +568,64 @@ body {
     font-size: 48px;
     padding-bottom: 10px;
 }
+
+.bluefone {
+    position: absolute;
+    top: 4427px;
+    right: 0;
+}
+
+.element2 {
+    position: absolute;
+    top: 4620px;
+    left: 191px;
+}
+
+.article01picture {
+    position: absolute;
+    top: 4650px;
+    left: 240px;
+}
+
+.article02picture {
+    position: absolute;
+    top: 4650px;
+    left: 765px;
+}
+
+.article03picture {
+    position: absolute;
+    top: 4650px;
+    right: 240px;
+}
+
+.sixthsection button {
+     position: absolute;
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    top: 5260px;
+    left: 880px;
+    width: 200px;
+    height: 55px;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 3px solid #458FF6;
+    border-radius: 55px;
+    color: #458FF6;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sixthsection button:hover {
+    background-color: #458FF6;
+    color: white;
+}
+
+.illustration4 {
+    position: absolute;
+    top: 5700px;
+    left: 0px;
+    width: 1978px;
+}
