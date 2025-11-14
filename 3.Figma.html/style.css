@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    width:auto;
+    height: 500vh;
+    width: 170vh;
     font-family: "Mulish", sans-serif;
 }
 
@@ -36,7 +37,7 @@ body {
     text-decoration: none;
     padding: 23px;
     margin-top: 70px;
-    margin-right: 200px;
+    margin-right: 192px;
     text-align: center;
     column-gap: 40px;
     color: #00000050;
@@ -163,14 +164,14 @@ body {
 .consultation {
     position: absolute;
     top: 1420px;
-    right: 430px;
+    right: 438px;
     font-size: 24px;
 }
 
 .con {
     position: absolute;
     top: 1470px;
-    right: 290px;
+    right: 320px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -201,14 +202,14 @@ body {
 .pharmacy {
     position: absolute;
     top: 1420px;
-    right: 925px;
+    right: 940px;
     font-size: 24px;
 }
 
 .phar {
     position: absolute;
     top: 1470px;
-    right: 850px;
+    right: 880px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -284,7 +285,7 @@ body {
 .tra {
     position: absolute;
     top: 1850px;
-    right: 275px;
+    right: 300px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -315,14 +316,14 @@ body {
 .emergency {
     position: absolute;
     top: 1800px;
-    right: 940px;
+    right: 950px;
     font-size: 24px;
 }
 
 .emerg {
     position: absolute;
     top: 1850px;
-    right: 840px;
+    right: 862px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -405,7 +406,7 @@ body {
     width: 80px;
     height: 95px;
     top: 1685px;
-    right: 1040px;
+    right: 1035px;
 }
 
 .info {
@@ -453,7 +454,6 @@ body {
 
 .p1 {
     position: absolute;
-    width: 952px;
     height: 60px;
     letter-spacing: 1, 2;
     text-align: center;
@@ -553,12 +553,3 @@ body {
     background-color: #458FF6;
     color: white;
 }
-
-.illustration3 {
-    position: absolute;
-    top: 3709px;
-    right: 390px;
-}
-
-
-
