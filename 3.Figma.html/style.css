@@ -567,5 +567,28 @@ body {
     top: 4433px;
     left: 280px;
     width: 1700px;
+}
 
+.fifthsection button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    line-height: 35px;
+    top: 5340px;
+    left: 894px;
+    width: 242px;
+    height: 70px;
+    padding: 16px 12px;
+    background-color: white;
+    border: 3px solid #458FF6;
+    border-radius: 55px;
+    color: #458FF6;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.fifthsection button:hover {
+    background-color: #458FF6;
+    color: white;
 }
