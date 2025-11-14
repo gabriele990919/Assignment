@@ -2,7 +2,7 @@ body {
     margin: 0;
     height: 500vh;
     width: 170vh;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Mulish", sans-serif;
 }
 
 .topHeader {
@@ -446,9 +446,9 @@ body {
 .thirdsection h2 {
     position: absolute;
     display: flex;
-    top: 2375px;
-    right: 292px;
-    font-size: 36px;
+    top: 2320px;
+    right: 150px;
+    font-size: 48px;
     padding-bottom: 10px;
 }
 
@@ -499,9 +499,9 @@ body {
 .fourthsection h2 {
     position: absolute;
     display: flex;
-    top: 3100px;
+    top: 3060px;
     left: 292px;
-    font-size: 36px;
+    font-size: 48px;
     padding-bottom: 10px;
 }
 
@@ -529,7 +529,6 @@ body {
     position: absolute;
     top: 3423px;
     left: 480px
-
 }
 
 .fourthsection button {
@@ -556,3 +555,18 @@ body {
     color: white;
 }
 
+.illustration3 {
+    position: absolute;
+    top: 3709px;
+    right: 390px; 
+}
+
+.fifthsection h2 {
+    position: absolute;
+    display: flex;
+    top: 3100px;
+    left: 292px;
+    font-size: 56px;
+    padding-bottom: 10px
+
+}
