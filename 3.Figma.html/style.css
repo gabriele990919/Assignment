@@ -202,14 +202,14 @@ body {
 .pharmacy {
     position: absolute;
     top: 1420px;
-    right: 940px;
+    right: 935px;
     font-size: 24px;
 }
 
 .phar {
     position: absolute;
     top: 1470px;
-    right: 880px;
+    right: 862px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #7D7987;
@@ -564,8 +564,8 @@ body {
 .fifthsection h2 {
     position: absolute;
     display: flex;
-    top: 3100px;
-    left: 292px;
+    top: 4433px;
+    left: 6px;
     font-size: 56px;
     padding-bottom: 10px
 
