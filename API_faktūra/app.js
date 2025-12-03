@@ -1,21 +1,14 @@
 console.log("Sąskaitos faktūros programa veikia!");
 
-const invoiceDiv = document.querySelector('invoice-container');
+fetch('https://in3.dev/inv/')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const informationList = document.getElementById('information');
+        data.forEach(invoice => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Sąskaitos numeris: ${invoice.number}, Data: ${invoice.date}, Viso su PVM: ${invoice.totalWithVat} EUR`;
+            informationList.appendChild(listItem);
+        });
+    })
 
-const printInformationList = info => {
-    info.forEach(item => {
-        const li = document.createElement('li') // tuščias li elementas
-        const pavadinimas = item.pavadinimas; // paimu iš struktūros name
-        const kaina = item.kaina; // paimu frazę
-        li.innerText = pavadinimas + ': ' + kaina + ' EUR' // į li dedu paimtą name ir frazę
-        li.classList.add('info');
-        invoiceUL.appendChild(li);
-    });
-}
-
-fetch('https://in3.dev/inv/') // siunčia užklausa
-    .then(res => res.json()) // laukiam tada JSON gautą rezultatą
-    .then(users => {
-        console.log(users);
-        
-    });
