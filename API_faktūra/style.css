@@ -22,3 +22,75 @@ h1 {
     color: rgb(35, 86, 40);
 }
 
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.box {
+    width: 40%;
+    padding: 15px;
+    background-color:rgba(35, 86, 40, 0.1);
+    border-left: 8px solid rgb(35, 86, 40);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.total-label {
+    text-align: right;
+}
+
+.information {
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table thead {
+    background-color: rgb(35, 86, 40, 0.2);
+    color: rgb(35, 86, 40);
+}
+
+th, td {
+    padding: 12px;
+    font-size: 15px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(35, 86, 40, 0.2);
+}
+
+.summary-box {
+    width: 300px;
+    margin-left: auto;
+    margin-top: 25px;
+    background-color: rgba(35, 86, 40, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid rgb(35, 86, 40);
+}
+
+.summary-box table {
+    width: 100%;
+    border: none;
+}
+
+.summary-box td {
+    border: none;
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+.summary-box tr:last-child td {
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 3px solid rgb(35, 86, 40);
+}
