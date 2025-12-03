@@ -17,8 +17,31 @@
         <strong>Apmokėti iki:</strong><span id="due-date">---</span>
     </div>
 
-    <div></div>
-    
+    <div class="flex">
+        <div class="box" id="seller">Pardavėjas</div>
+        <div class="box" id="buyer">Pirkėjas</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>Prekės pavadinimas</th>
+                <th>Kiekis</th>
+                <th>Kaina (vnt.)</th>
+                <th>Nuolaida</th>
+                <th>Suma</th>
+            </tr>
+        </thead>
+        <tbody id="items-body">
+            <!-- Prekės bus įterptos čia -->
+        </tbody>
+        <tr>
+            <td colspan="5" class="total-label"><strong>Transportavimas</strong></td>
+            <td id="shipping-price">---</td>
+        </tr>
+        </table>
+        
     </div> 
 </body>
 </html>
