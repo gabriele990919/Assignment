@@ -17,7 +17,7 @@ async function loadInvoice() {
         const response = await fetch("https://in3.dev/inv/");
         const data = await response.json();
 
-        // Įdedame pagrindinę informaciją
+        // Sąskaitos info
         document.getElementById("invoiceNumber").textContent = data.number;
         document.getElementById("invoiceDate").textContent = data.date;
         document.getElementById("dueDate").textContent = data.due_date;
@@ -35,54 +35,55 @@ async function loadInvoice() {
         document.getElementById("buyerVat").textContent = data.company.buyer.vat;
 
         // Prekės
-        const itemsTable = document.getElementById("itemsBody");
-        itemsTable.innerHTML = ""; // išvalo senas eilutes
+        const itemsBody = document.getElementById("itemsBody");
+        itemsBody.innerHTML = "";
 
         let subtotal = 0;
 
         data.items.forEach(item => {
-            let quantity = item.quantity;
-            let price = item.price;
+            const qty = item.quantity;
+            const price = item.price;
+
             let discountAmount = 0;
 
-            // Nuolaidos logika
-            if (item.discount && item.discount.type === "percentage") {
+            if (item.discount?.type === "percentage") {
                 discountAmount = price * (item.discount.value / 100);
-            }
-            if (item.discount && item.discount.type === "fixed") {
+            } 
+            if (item.discount?.type === "fixed") {
                 discountAmount = item.discount.value;
             }
 
-            const finalPrice = (price - discountAmount) * quantity;
-            subtotal += finalPrice;
+            const final = (price - discountAmount) * qty;
+            subtotal += final;
 
-            // Sukuriame eilutę
             const row = `
                 <tr>
                     <td>${item.description}</td>
-                    <td>${quantity}</td>
+                    <td>${qty}</td>
                     <td>${price.toFixed(2)} €</td>
-                    <td>${discountAmount > 0 ? "-" + discountAmount.toFixed(2) + " €" : "-"}</td>
-                    <td>${finalPrice.toFixed(2)} €</td>
+                    <td>${discountAmount ? "-" + discountAmount.toFixed(2) + " €" : "-"}</td>
+                    <td>${final.toFixed(2)} €</td>
                 </tr>
             `;
-            itemsTable.insertAdjacentHTML("beforeend", row);
+            itemsBody.insertAdjacentHTML("beforeend", row);
         });
 
-        // Transportas
-        subtotal += data.shippingPrice;
+        // Transportas (tikras API key: shipping_price)
+        subtotal += data.shippingPrice || 0;
 
         // PVM 21%
         const vat = subtotal * 0.21;
         const total = subtotal + vat;
 
-        // Rodome sumas
         document.getElementById("subtotal").textContent = subtotal.toFixed(2) + " €";
         document.getElementById("vat").textContent = vat.toFixed(2) + " €";
         document.getElementById("total").textContent = total.toFixed(2) + " €";
 
-    } catch (error) {
-        console.error("Klaida gaunant API duomenis:", error);
+        document.getElementById("shippingPrice").textContent = (data.shipping_price || 0).toFixed(2) + " €";
+
+    } catch (err) {
+        console.error("Klaida gaunant API duomenis:", err);
     }
 }
+
 window.onload = loadInvoice;
