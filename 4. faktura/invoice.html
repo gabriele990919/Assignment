@@ -1,213 +1,178 @@
 <!DOCTYPE html>
 <html lang="lt">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Sąskaita Faktūra</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        input {
-            width: 60px;
-        }
-
-        button {
-            margin: 5px 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Sąskaita Faktūra</title>
+<style>
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  input { width: 60px; }
+  button { margin: 5px 0; }
+</style>
 </head>
-
 <body>
 
-    <h1 id="pageTitle">Sukurti naują sąskaitą</h1>
+<h1 id="pageTitle">Sukurti naują sąskaitą</h1>
 
-    <form id="invoiceForm">
-        Numeris: <input type="text" id="number" required><br><br>
-        Data: <input type="date" id="date" required><br><br>
+<form id="invoiceForm">
+  Numeris: <input type="text" id="number" required><br><br>
+  Data: <input type="date" id="date" required><br><br>
 
-        <button type="button" onclick="addItem()">Pridėti prekę ranka</button>
-        <button type="button" onclick="loadFromAPI()">Užkrauti prekes iš API</button>
+  <button type="button" onclick="addItem()">Pridėti prekę ranka</button>
+  <button type="button" onclick="loadFromAPI()">Užkrauti prekes iš API</button>
 
-        <table id="itemsTable">
-            <thead>
-                <tr>
-                    <th>Prekė</th>
-                    <th>Kiekis</th>
-                    <th>Kaina</th>
-                    <th>Nuolaida</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table><br>
+  <table id="itemsTable">
+    <thead>
+      <tr><th>Prekė</th><th>Kiekis</th><th>Kaina</th><th>Nuolaida</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table><br>
 
-        <strong>PVM:</strong> <span id="vat">0</span> €<br>
-        <strong>Galutinė suma:</strong> <span id="total">0</span> €<br><br>
+  <strong>PVM:</strong> <span id="vat">0</span> €<br>
+  <strong>Galutinė suma:</strong> <span id="total">0</span> €<br><br>
 
-        <button type="submit">Išsaugoti sąskaitą</button>
-    </form>
+  <button type="submit">Išsaugoti sąskaitą</button>
+</form>
 
-    <script>
-        let invoices = JSON.parse(localStorage.getItem('invoices') || '[]');
-        let urlParams = new URLSearchParams(window.location.search);
-        let invoiceId = urlParams.get('id');
-        let viewMode = urlParams.get('view') === 'true';
-        let currentInvoice = invoiceId ? invoices.find(inv => inv.id === invoiceId) : null;
+<script>
+let invoices = JSON.parse(localStorage.getItem('invoices') || '[]');
+let urlParams = new URLSearchParams(window.location.search);
+let invoiceId = urlParams.get('id');
+let viewMode = urlParams.get('view') === 'true';
+let currentInvoice = invoiceId ? invoices.find(inv => inv.id === invoiceId) : null;
 
-        // Sukuria naują prekę lentelėje
-        function addItem(item = { name: '', qty: 1, price: 0, discount: 0 }) {
-            const tbody = document.querySelector('#itemsTable tbody');
-            const tr = document.createElement('tr');
+// Normalizuoja bet kokį item į paprastą formą
+function normalizeItem(item) {
+  return {
+    name: typeof item.name === 'string' ? item.name : (item.product?.name ?? JSON.stringify(item.name ?? '')),
+    qty: !isNaN(Number(item.qty)) ? Number(item.qty) : 1,
+    price: !isNaN(Number(item.price)) ? Number(item.price) : 0,
+    discount: !isNaN(Number(item.discount)) ? Number(item.discount) : 0
+  };
+}
 
-            // Name: visada string
-            const name = typeof item.name === 'string' ? item.name : JSON.stringify(item.name);
+// Prideda prekę į lentelę
+function addItem(item = {name:'', qty:1, price:0, discount:0}) {
+  const tbody = document.querySelector('#itemsTable tbody');
+  const tr = document.createElement('tr');
 
-            // Kiekiai: visada skaičiai
-            const qty = !isNaN(Number(item.qty)) ? Number(item.qty) : 1;
-            const price = !isNaN(Number(item.price)) ? Number(item.price) : 0;
-            const discount = !isNaN(Number(item.discount)) ? Number(item.discount) : 0;
+  const name = typeof item.name === 'string' ? item.name : JSON.stringify(item.name ?? '');
+  const qty = !isNaN(Number(item.qty)) ? Number(item.qty) : 1;
+  const price = !isNaN(Number(item.price)) ? Number(item.price) : 0;
+  const discount = !isNaN(Number(item.discount)) ? Number(item.discount) : 0;
 
-            tr.innerHTML = `
+  tr.innerHTML = `
     <td><input type="text" value="${name}" ${viewMode ? 'disabled' : ''}></td>
     <td><input type="number" value="${qty}" ${viewMode ? 'disabled' : ''}></td>
     <td><input type="number" value="${price}" ${viewMode ? 'disabled' : ''}></td>
     <td><input type="number" value="${discount}" ${viewMode ? 'disabled' : ''}></td>
   `;
+  tbody.appendChild(tr);
+  updateTotals();
 
-            tbody.appendChild(tr);
-            updateTotals();
+  if (!viewMode) {
+    tr.querySelectorAll('input').forEach(inp => inp.addEventListener('input', updateTotals));
+  }
+}
 
-            if (!viewMode) {
-                tr.querySelectorAll('input').forEach(inp => inp.addEventListener('input', updateTotals));
-            }
-        }
-        // Apskaičiuoja PVM ir galutinę sumą
-        function updateTotals() {
-            const rows = document.querySelectorAll('#itemsTable tbody tr');
-            let total = 0;
-            rows.forEach(row => {
-                const inputs = row.querySelectorAll('input');
-                const qty = parseFloat(inputs[1].value) || 0;
-                const price = parseFloat(inputs[2].value) || 0;
-                const discount = parseFloat(inputs[3].value) || 0;
-                total += qty * price - discount;
-            });
-            const vat = total * 0.21; // 21% PVM
-            document.getElementById('vat').textContent = vat.toFixed(2);
-            document.getElementById('total').textContent = (total + vat).toFixed(2);
-        }
+// Apskaičiuoja PVM ir galutinę sumą
+function updateTotals() {
+  const rows = document.querySelectorAll('#itemsTable tbody tr');
+  let total = 0;
+  rows.forEach(row => {
+    const inputs = row.querySelectorAll('input');
+    const qty = Number(inputs[1].value) || 0;
+    const price = Number(inputs[2].value) || 0;
+    const discount = Number(inputs[3].value) || 0;
+    total += qty * price - discount;
+  });
+  const vat = total * 0.21;
+  document.getElementById('vat').textContent = vat.toFixed(2);
+  document.getElementById('total').textContent = (total + vat).toFixed(2);
+}
 
-        // Užkrauna prekes iš API
-        function loadFromAPI() {
-            fetch('https://in3.dev/inv/')
-                .then(res => res.json())
-                .then(data => {
-                    let items = [];
+// Užkrauna prekes iš API
+function loadFromAPI() {
+  fetch('https://in3.dev/inv/') // pakeisk į konkretų endpoint
+    .then(res => res.json())
+    .then(data => {
+      let items = [];
+      if (Array.isArray(data)) {
+        items = data.map(normalizeItem);
+      } else if (data.items && Array.isArray(data.items)) {
+        items = data.items.map(normalizeItem);
+      } else {
+        console.error('API struktūra neatitinka lūkesčių:', data);
+        return;
+      }
 
-                    if (Array.isArray(data)) {
-                        // Jei API grąžina tiesiog masyvą
-                        items = data.map(it => ({
-                            name: (it.name ?? '') + '', // visada string
-                            qty: Number(it.qty ?? 1),
-                            price: Number(it.price ?? 0),
-                            discount: Number(it.discount ?? 0)
-                        }));
-                    }
-                    else if (data.items && Array.isArray(data.items)) {
-                        // Jei API grąžina objektą su items
-                        items = data.items.map(it => ({
-                            name: (it.name ?? (it.product?.name ?? '')) + '',
-                            qty: Number(it.qty ?? 1),
-                            price: Number(it.price ?? 0),
-                            discount: Number(it.discount ?? 0)
-                        }));
-                    }
-                    else {
-                        console.error('API struktūra neatitinka lūkesčių:', data);
-                        return;
-                    }
+      document.querySelector('#itemsTable tbody').innerHTML = '';
+      items.forEach(item => addItem(item));
+      updateTotals();
+    })
+    .catch(err => console.error('Klaida kraunant API:', err));
+}
 
-                    // Užkrauname prekes į lentelę
-                    const tbody = document.querySelector('#itemsTable tbody');
-                    tbody.innerHTML = '';
-                    items.forEach(item => addItem(item));
-                    updateTotals();
-                })
-                .catch(err => console.error('Klaida kraunant API:', err));
-        }
-        // Išsaugo sąskaitą į LocalStorage
-        function saveInvoice(e) {
-            e.preventDefault();
-            if (viewMode) return;
+// Išsaugo sąskaitą
+function saveInvoice(e) {
+  e.preventDefault();
+  if (viewMode) return;
 
-            const number = document.getElementById('number').value;
-            const date = document.getElementById('date').value;
-            const items = Array.from(document.querySelectorAll('#itemsTable tbody tr')).map(row => {
-                const inputs = row.querySelectorAll('input');
-                return {
-                    name: inputs[0].value,
-                    qty: parseFloat(inputs[1].value),
-                    price: parseFloat(inputs[2].value),
-                    discount: parseFloat(inputs[3].value)
-                };
-            });
+  const number = document.getElementById('number').value;
+  const date = document.getElementById('date').value;
+  const items = Array.from(document.querySelectorAll('#itemsTable tbody tr')).map(row => {
+    const inputs = row.querySelectorAll('input');
+    return {
+      name: inputs[0].value,
+      qty: Number(inputs[1].value) || 1,
+      price: Number(inputs[2].value) || 0,
+      discount: Number(inputs[3].value) || 0
+    };
+  });
 
-            const total = parseFloat(document.getElementById('total').textContent);
-            const vat = parseFloat(document.getElementById('vat').textContent);
+  const total = Number(document.getElementById('total').textContent) || 0;
+  const vat = Number(document.getElementById('vat').textContent) || 0;
 
-            if (currentInvoice) {
-                document.getElementById('number').value = currentInvoice.number;
-                document.getElementById('date').value = currentInvoice.date;
+  if (currentInvoice) {
+    currentInvoice.number = number;
+    currentInvoice.date = date;
+    currentInvoice.items = items;
+    currentInvoice.total = total;
+    currentInvoice.vat = vat;
+  } else {
+    invoices.push({
+      id: Date.now().toString(),
+      number,
+      date,
+      items,
+      total,
+      vat
+    });
+  }
 
-                currentInvoice.items.forEach(item => addItem(normalizeItem(item)));
+  localStorage.setItem('invoices', JSON.stringify(invoices));
+  window.location = 'index.html';
+}
 
-                document.getElementById('pageTitle').textContent = viewMode ? 'Peržiūra sąskaita' : 'Redaguoti sąskaitą';
+document.getElementById('invoiceForm').addEventListener('submit', saveInvoice);
 
-            } else {
-                invoices.push({
-                    id: Date.now().toString(),
-                    number,
-                    date,
-                    items,
-                    total,
-                    vat
-                });
-            }
+// Užpildo laukus jei redaguojama arba žiūrima
+if (currentInvoice) {
+  document.getElementById('number').value = currentInvoice.number;
+  document.getElementById('date').value = currentInvoice.date;
+  currentInvoice.items.forEach(item => addItem(normalizeItem(item)));
+  document.getElementById('pageTitle').textContent = viewMode ? 'Peržiūra sąskaita' : 'Redaguoti sąskaitą';
+} else {
+  addItem(); // nauja sąskaita pradedama su viena preke
+}
 
-            localStorage.setItem('invoices', JSON.stringify(invoices));
-            window.location = 'index.html'; // grįžta į sąskaitų sąrašą
-        }
+// Automatinis numerio sugeneravimas
+if (!currentInvoice) {
+  document.getElementById('number').value = `SF-${Date.now()}`;
+  document.getElementById('date').valueAsDate = new Date();
+}
+</script>
 
-        document.getElementById('invoiceForm').addEventListener('submit', saveInvoice);
-
-        // Užpildo laukus jei redaguojama arba žiūrima
-        if (currentInvoice) {
-            document.getElementById('number').value = currentInvoice.number;
-            document.getElementById('date').value = currentInvoice.date;
-            currentInvoice.items.forEach(item => addItem(item));
-            document.getElementById('pageTitle').textContent = viewMode ? 'Peržiūra sąskaita' : 'Redaguoti sąskaitą';
-        } else {
-            addItem(); // nauja sąskaita pradedama su viena preke
-        }
-
-        // Automatinis sąskaitos numerio sugeneravimas naujai sąskaitai
-        if (!currentInvoice) {
-            document.getElementById('number').value = `SF-${Date.now()}`;
-            document.getElementById('date').valueAsDate = new Date();
-        }
-        
-        items.forEach(item => addItem(normalizeItem(item)));
-    </script>
 </body>
-
 </html>
+    
