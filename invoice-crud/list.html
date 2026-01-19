@@ -8,9 +8,70 @@
 </head>
 <body>
 
-    <h1>Invoices</h1>
-    <ul id="list"></ul>
-    <script type="module" src="js/list.js"></script>
+     <div class="invoice-container">
+        <h1>PVM SĄSKAITA FAKTŪRA</h1>
+
+        <div class="information">
+            <strong>Sąskaitos nr:</strong><span id="invoiceNumber">---</span><br>
+            <strong>Data:</strong><span id="invoiceDate">---</span>
+            <strong>Apmokėti iki:</strong><span id="dueDate">---</span>
+        </div>
+
+        <div class="flex">
+            <div class="box">
+                <h3>Pardavėjas</h3>
+                <span id="sellerName"></span><br>
+                <span id="sellerAddress"></span><br>
+                Įmonės kodas: <span id="sellerCode"></span><br>
+                PVM kodas: <span id="sellerVat"></span>
+            </div>
+
+            <div class="box">
+                <h3>Pirkėjas</h3>
+                <span id="buyerName"></span><br>
+                <span id="buyerAddress"></span><br>
+                Įmonės kodas: <span id="buyerCode"></span><br>
+                PVM kodas: <span id="buyerVat"></span>
+            </div>
+        </div>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Nr.</th>
+                    <th>Prekės pavadinimas</th>
+                    <th>Kiekis</th>
+                    <th>Kaina (vnt.)</th>
+                    <th>Nuolaida</th>
+                    <th>Suma</th>
+                </tr>
+            </thead>
+            <tbody id="itemsBody">
+                <!-- Prekės bus įterptos čia -->
+            </tbody>
+            <tr>
+                <td colspan="5" class="total-label"><strong>Transportavimas</strong></td>
+                <td id="shippingPrice">0.00 €</td>
+            </tr>
+        </table>
+
+        <div class="summary-box">
+            <table>
+                <tr>
+                    <td>Tarpinė suma:</td>
+                    <td id="subtotal">0.00 €</td>
+                </tr>
+                <tr>
+                    <td>PVM 21%:</td>
+                    <td id="vat">0.00 €</td>
+                </tr>
+                <td><strong>Viso su PVM:</strong></td>
+                <td id="total">0.00 €</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
 
 </body>
 </html>
