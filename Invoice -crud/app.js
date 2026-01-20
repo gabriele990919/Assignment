@@ -39,6 +39,7 @@ async function loadInvoice() {
 
         // Jeigu API grąžina masyvą, imame pirmą elementą
         const inv = Array.isArray(data) ? data[0] : data;
+        invoiceData = inv;
         if (!inv) throw new Error("API negrąžino sąskaitos objekto (inv === undefined/null).");
 
         console.log("Naudojamas invoice objektas:", inv);
@@ -130,3 +131,25 @@ async function loadInvoice() {
 }
 
 window.addEventListener("load", loadInvoice);
+
+document.getElementById("saveInvoice").onclick = () => {
+    if (!invoiceData) {
+        alert("Nėra sąskaitos");
+        return;
+    }
+
+    const invoices = JSON.parse(localStorage.getItem("Sąskaita")) || [];
+
+    invoiceData.id = crypto.randomUUID(); // LABAI SVARBU
+    invoices.push(invoiceData);
+
+    localStorage.setItem("Sąskaita", JSON.stringify(invoices));
+
+    alert("Sąskaita išsaugota!");
+    window.location.href = "list.html"; // optional, bet WOW
+};
+
+document.getElementById("Spauszdinti").onclick = () => {
+    document.title = "PVM_saskaita_" + invoiceData.number;
+    window.print();
+};
